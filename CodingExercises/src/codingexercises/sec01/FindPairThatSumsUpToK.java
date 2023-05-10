@@ -1,3 +1,8 @@
+/*
+Given an array of integers arr and an integer k, create a boolean function that checks if
+there exist two elements in arr such that we get k when we add them together.
+*/
+
 package codingexercises.sec01;
 
 import java.util.Arrays;
@@ -23,22 +28,10 @@ public class FindPairThatSumsUpToK {
         System.out.println(findPairDictionary(new int[]{4, 5, 1, -3, 6}, 8));
         System.out.println("------------------------------------------------------------------");
 
-//        int[] array1 = new int[]{4, 5, 1, -3, 6};
-//        for (int temp : array1) {
-//            System.out.print(temp + " ");
-//        }
-//
-//        Arrays.sort(array1);
-//        for (int temp : array1) {
-//            System.out.print(temp + " ");
-//        }
-
-
-
     }
 
-// Time complexity: O(n2)
-// Space complexity: O(1)
+    // Time complexity: O(n2)
+    // Space complexity: O(1)
     public static boolean findPair(int[] arr, int k){
         for (int i = 0; i < arr.length; i++){
             for (int j = 0; j < arr.length; j++){
@@ -48,9 +41,9 @@ public class FindPairThatSumsUpToK {
         } return false;
     }
 
-// By sorting the array:
-// Time complexity: O(nlogn)
-// Space complexity: depends on the sorting algorithm we use
+    // By sorting the array:
+    // Time complexity: O(nlogn)
+    // Space complexity: depends on the sorting algorithm we use
     public static boolean findPairSorted(int[] arr, int k){
         Arrays.sort(arr);
         int left = 0;
@@ -67,9 +60,9 @@ public class FindPairThatSumsUpToK {
         } return false;
     }
 
-// By using a dictionary:
-// Time complexity: O(n)
-// Space complexity: O(n)
+    // By using a dictionary:
+    // Time complexity: O(n)
+    // Space complexity: O(n)
     public static boolean findPairDictionary(int[] arr, int k){
         HashMap<Integer,Boolean> visited = new HashMap<>();
         for(int element : arr){
